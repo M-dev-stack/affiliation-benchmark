@@ -1,4 +1,4 @@
-# SIGIR26 affiliation matching
+# Affiliation matching
 Supplementary data repository for SIGIR 26 affiliation matching repo
 
 ## Repository Structure
