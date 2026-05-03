@@ -1,0 +1,2 @@
+# Python dependencies for ROR Harvester
+requests>=2.28.0  # HTTP library with better SSL handling and retry support
