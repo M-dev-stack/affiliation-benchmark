@@ -1,5 +1,5 @@
 # Affiliation matching
-Supplementary data repository for SIGIR 26 affiliation matching repo
+Supplementary data repository for affiliation matching repo
 
 ## Repository Structure
 
