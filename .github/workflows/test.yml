@@ -32,7 +32,7 @@ jobs:
     - name: Run unit tests
       run: |
         python -m unittest discover -s tests -p 'test_*.py' -v
-eco-ci:
+  eco-ci:
     runs-on: ubuntu-latest
     permissions:
       contents: read
