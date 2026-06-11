@@ -56,7 +56,6 @@ jobs:
       uses: green-coding-berlin/eco-ci-energy-estimation@v5
       with:
         send-data: "true"
-        api-endpoint: "https://metrics.green-coding.io"
       continue-on-error: true
     
     - name: Run unit tests
@@ -67,13 +66,10 @@ jobs:
       uses: green-coding-berlin/eco-ci-energy-estimation@v5
       with:
         send-data: "true"
-        api-endpoint: "https://metrics.green-coding.io"
       continue-on-error: true
     
     - name: Display Eco CI results
       uses: green-coding-berlin/eco-ci-energy-estimation@v5
       with:
         send-data: "true"
-        api-endpoint: "https://metrics.green-coding.io"
       continue-on-error: true
-        
