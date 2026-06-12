@@ -32,6 +32,7 @@ jobs:
     - name: Run unit tests
       run: |
         python -m unittest discover -s tests -p 'test_*.py' -v
+
   eco-ci:
     runs-on: ubuntu-latest
     permissions:
@@ -51,18 +52,17 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     
-    - name: Run tests with Eco CI measurement
+    - name: Eco CI Energy Measurement
       uses: green-coding-solutions/eco-ci-energy-estimation@v5
       with:
         task: start-measurement
-      continue-on-error: true
     
     - name: Run unit tests
       run: |
         python -m unittest discover -s tests -p 'test_*.py' -v
     
-    - name: Complete measurement
+    - name: Eco CI Results
+      if: always()
       uses: green-coding-solutions/eco-ci-energy-estimation@v5
       with:
         task: display-results
-      continue-on-error: true
