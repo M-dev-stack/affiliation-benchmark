@@ -52,17 +52,27 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     
-    - name: Eco CI Energy Measurement
+    - name: Initialize Energy Estimation
       uses: green-coding-solutions/eco-ci-energy-estimation@v5
       with:
         task: start-measurement
+        project: "Affiliation Benchmark"
+        machine: "ubuntu-latest"
+        tags: "CI/CD,Python Tests"
     
     - name: Run unit tests
       run: |
         python -m unittest discover -s tests -p 'test_*.py' -v
     
-    - name: Eco CI Results
+    - name: Record Energy Measurement
+      uses: green-coding-solutions/eco-ci-energy-estimation@v5
+      with:
+        task: get-measurement
+        label: "unit tests"
+    
+    - name: Eco CI Energy Estimation
       if: always()
       uses: green-coding-solutions/eco-ci-energy-estimation@v5
       with:
         task: display-results
+        pr-comment: true
